@@ -13,10 +13,17 @@ public class caesarShifr {
         StringReader reader = new StringReader(reader3);
 
         System.out.println("Введите шаг сдвига (число) и нажмите клавишу Enter: ");
-        String reader2 = reader1.readLine();
-        int key = Integer.parseInt(reader2);
+        try {
+            String reader2 = reader1.readLine();
+            int key = Integer.parseInt(reader2);
+            System.out.println(decode(reader, key, chars));
+        }
+        catch (Exception e) {
+            System.out.println("Шаг сдвига пустой!!!");
+        }
 
-        System.out.println(decode(reader, key, chars));
+
+
     }
 
     public static String decode(StringReader reader, int key, char chars[]) {
